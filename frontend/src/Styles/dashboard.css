@@ -1,0 +1,37 @@
+.header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 24px;
+    border-bottom: 2px solid #fff;
+    height: 5vh;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5em;
+    transition: color 0.2s ease-in;
+}
+a:hover {
+    color: rgb(96, 84, 207);
+}
+
+.welcome {
+    color: #fff;
+    padding: 8px;
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+
+.welcome > p {
+    line-height: 25px;
+    letter-spacing: 1px;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 450px;
+    font-size: 1.2em;
+}

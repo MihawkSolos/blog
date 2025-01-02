@@ -1,0 +1,27 @@
+
+
+.createPostContainer {
+    background-color: #2e2c2c;
+    height: 70vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.titleInput, .contentInput {
+    display: flex;
+    flex-direction: column;
+}

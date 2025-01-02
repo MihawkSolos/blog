@@ -3,18 +3,26 @@ import jwt from 'jsonwebtoken';
 const JWT_SECRET = process.env.JWT_SECRET;
 
 export function authenticate(req, res, next) {
-    const token = req.headers.authorization?.split(' ')[1]; // Bearer <token>
+    const authHeader = req.header('Authorization');
+    console.log("Authorization Header:", authHeader);
 
+    if (!authHeader) {
+        return res.status(401).json({ message: 'No Authorization header provided' });
+    }
+
+    const token = authHeader.replace('Bearer ', ''); // Remove 'Bearer ' prefix
     if (!token) {
-        return res.status(401).json({ error: 'No token provided' });
+        return res.status(401).json({ message: 'Token missing from Authorization header' });
     }
 
-    try {
-        // Verify token
-        const decoded = jwt.verify(token, JWT_SECRET);
-        req.user = decoded; // Add user info to request object
-        next(); // Pass control to the next handler
-    } catch (error) {
-        return res.status(401).json({ error: 'Invalid or expired token' });
-    }
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+        if (err) {
+            return res.status(403).json({ message: 'Invalid token' });
+        }
+        console.log("Decoded token:", decoded); // Log the decoded token
+        req.user = decoded;
+        next();
+    });
 }
+
+

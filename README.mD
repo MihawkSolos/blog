@@ -3,7 +3,7 @@ BACKEND
 1. did npm init -y
 2. npm i express cors (install express and cors)
 3. added type: module in package.json
-4. node index.js (or nodemon but need to install it to start backend)
+4. node app.js (or nodemon but need to install it to start backend)
 
 5. npm install @prisma/client
 6. npm install prisma --save-dev

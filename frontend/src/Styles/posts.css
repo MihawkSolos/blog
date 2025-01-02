@@ -1,0 +1,30 @@
+body {
+    background: #2e2c2c;
+}
+
+.postsContainer {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.postCard {
+    border: 2px solid black;
+    padding: 12px;
+    margin: 20px;
+    border-radius: 8px;
+    width: 60vw;
+    background: #e4e2e2;
+    color: #000;
+    position: sticky;
+}
+
+.postInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+}
+
